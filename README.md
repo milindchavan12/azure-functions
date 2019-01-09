@@ -8,3 +8,5 @@ Azure Functions uses Event-Driven Programming Model, which means functions respo
 - Http : Implements the Web API or Webhooks
 - Other : Blob creation, Cosmos Db new row
 
+## Bindings
+To integrate with other services, Function provides a input and output bindings.
