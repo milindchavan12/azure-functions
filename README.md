@@ -10,3 +10,8 @@ Azure Functions uses Event-Driven Programming Model, which means functions respo
 
 ## Bindings
 To integrate with other services, Function provides a input and output bindings.
+
+## Hosting Models:
+- Consumption Plan (Serverless)
+- App Service Plan
+- Docker Container.
