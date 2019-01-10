@@ -19,6 +19,7 @@ namespace TodoFunction
         public static async Task<IActionResult> CreateToDo([HttpTrigger(AuthorizationLevel.Anonymous,
             "post", Route = "todo")]HttpRequest req, 
             [Table("todos", Connection = "AzureWebJobsStorage")] IAsyncCollector<ToDoTableEntity> todoTable,
+            [Queue("todos", Connection = "AzureWebJobsStorage")] IAsyncCollector<ToDo> todoQueue,
             ILogger log)
         {
             log.LogInformation("Creating new todo list item.");
@@ -28,7 +29,7 @@ namespace TodoFunction
 
             var todo = new ToDo { TaskDescription = input.TaskDescription };
             await todoTable.AddAsync(todo.ToTableEntity());
-
+            await todoQueue.AddAsync(todo);
             return new OkObjectResult(todo);
         }
 
