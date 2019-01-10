@@ -19,4 +19,4 @@ To integrate with other services, Function provides a input and output bindings.
 ## Azure Functions Proxies
 Azure functions proxies are the ways to intercept all incoming HTTP traffic to the function app. We can use them to proxy the functions in our functions app or completely different destinations. To implement the proxies, we need to create *proxies.json* in our functions app.
 
-![alt text]()
+![alt text](https://github.com/milindchavan12/azure-functions/blob/master/Assets/proxies.png)
