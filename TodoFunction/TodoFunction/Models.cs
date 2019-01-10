@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.WindowsAzure.Storage.Table;
+
 namespace TodoFunction
 {
     public class ToDo
@@ -16,6 +18,13 @@ namespace TodoFunction
 
     public class ToDoUpdateModel
     {
+        public string TaskDescription { get; set; }
+        public bool IsCompleted { get; set; }
+    }
+
+    public class ToDoTableEntity : TableEntity
+    {
+        public DateTime CreateTime { get; set; }
         public string TaskDescription { get; set; }
         public bool IsCompleted { get; set; }
     }
